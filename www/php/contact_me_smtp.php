@@ -9,15 +9,14 @@ include("SMTP.php");
 
 if($_POST)
 {
-    $to_Email       = "halstonv@gmail.com"; // Replace with recipient email address
-	$subject        = 'Message from Strivid '.$_SERVER['SERVER_NAME']; //Subject line for emails
+    $to_Email       = "halston@darkmoonhaunts.com"; // Replace with recipient email address
+    $subject        = 'Message from DarkMoon '.$_SERVER['SERVER_NAME']; //Subject line for emails
     
-    $host           = "smtp.gmail.com"; // Your SMTP server. For example, smtp.gmail.com
-    $username       = "your.email@gmail.com"; //For example, your.email@gmail.com
-    $password       = "password"; // Your password
-    $SMTPSecure     = "ssl"; // For example, ssl
-    $port           = 465; // For example, 465
-    
+    $host           = "darkmoonhaunts.com"; // Your SMTP server
+    $username       = "halston@darkmoonhaunts.com"; // Your email address
+    $password       = "JDwiwaves88!"; // Your email password
+    $SMTPSecure     = "tls"; // For example, tls
+    $port           = 587; // For TLS
     
     //check if its an ajax request, exit if not
     if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
@@ -60,37 +59,37 @@ if($_POST)
     }
     if(strlen($user_Message)<5) //check emtpy message
     {
-        $output = json_encode(array('type'=>'error', 'text' => 'Too short message! Please enter something.'));
+        $output = json_encode(array('type'=>'error', 'text' => 'Message is too short.'));
         die($output);
     }
     
 
-	$mail = new PHPMailer();
+    $mail = new PHPMailer();
 
     $mail->IsSMTP(); 
-	$mail->SMTPAuth = true;	
-	$mail->Host = $host;
-	$mail->Username = $username;
-	$mail->Password = $password;
-	$mail->SMTPSecure = $SMTPSecure;
-	$mail->Port = $port;		 
-	$mail->setFrom($username);
-	$mail->addReplyTo($user_Email);	 
-	$mail->AddAddress($to_Email);
-	$mail->Subject = $subject;
-	$mail->Body = $user_Message. "\r\n\n"  .'Name: '.$user_Name. "\r\n" .'Email: '.$user_Email;
-	$mail->WordWrap = 200;
-	$mail->IsHTML(false);
+    $mail->SMTPAuth = true;    
+    $mail->Host = $host;
+    $mail->Username = $username;
+    $mail->Password = $password;
+    $mail->SMTPSecure = $SMTPSecure;
+    $mail->Port = $port;         
+    $mail->setFrom($username);
+    $mail->addReplyTo($user_Email);     
+    $mail->AddAddress($to_Email);
+    $mail->Subject = $subject;
+    $mail->Body = $user_Message. "\r\n\n"  .'Name: '.$user_Name. "\r\n" .'Email: '.$user_Email;
+    $mail->WordWrap = 200;
+    $mail->IsHTML(false);
 
-	if(!$mail->send()) {
+    if(!$mail->send()) {
 
-		$output = json_encode(array('type'=>'error', 'text' => 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo));
-		die($output);
+        $output = json_encode(array('type'=>'error', 'text' => 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo));
+        die($output);
 
-	} else {
-	    $output = json_encode(array('type'=>'message', 'text' => 'Hi '.$user_Name .'! Thank you for your email.'));
-		die($output);
-	}
+    } else {
+        $output = json_encode(array('type'=>'message', 'text' => 'Hi '.$user_Name .'! Thank you for your email. We will get back to you within 24 hours.'));
+        die($output);
+    }
     
 }
 ?>

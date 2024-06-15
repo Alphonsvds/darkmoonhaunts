@@ -348,6 +348,12 @@ img:not([draggable]), embed, object, video{
 .border-color-primary-1{
     border: 1px solid var(--color-primary-1);
 }
+
+/* Ensure all links and buttons have pointer cursor */
+a, button {
+    cursor: pointer;
+}
+
 .border-color-primary-2{
     border: 1px solid var(--color-primary-2);
 }
@@ -401,6 +407,12 @@ img:not([draggable]), embed, object, video{
     color: #fff;
     background: var(--color-primary-1);
 }
+
+reduced-padding {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
 .animate, .animate *{
     transition: var(--transition-default);
 }

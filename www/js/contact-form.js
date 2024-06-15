@@ -36,7 +36,7 @@ $(document).ready(function(){
             };
             
             //Ajax post data to server
-            $.post('php/contact_me.php', post_data, function(response){
+            $.post('php/contact_me_smtp.php', post_data, function(response){
             
                 //load json data from server and output message     
                 if (response.type == 'error') {

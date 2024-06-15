@@ -1,0 +1,50 @@
+[debug] [2024-06-15T12:03:13.151Z] ----------------------------------------------------------------------
+[debug] [2024-06-15T12:03:13.152Z] Command:       /Users/halston/.nvm/versions/node/v18.19.0/bin/node /Users/halston/.nvm/versions/node/v18.19.0/bin/firebase init
+[debug] [2024-06-15T12:03:13.152Z] CLI Version:   13.4.0
+[debug] [2024-06-15T12:03:13.152Z] Platform:      darwin
+[debug] [2024-06-15T12:03:13.153Z] Node Version:  v18.19.0
+[debug] [2024-06-15T12:03:13.154Z] Time:          Sat Jun 15 2024 05:03:13 GMT-0700 (Pacific Daylight Time)
+[debug] [2024-06-15T12:03:13.154Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-06-15T12:03:13.155Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-06-15T12:03:13.174Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-06-15T12:03:13.174Z] > authorizing via signed-in user (halstonv@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/halston/Projects/DarkMoon Haunts/dmh/www
+
+[debug] [2024-06-15T12:03:13.348Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-06-15T12:03:13.348Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-06-15T12:04:42.938Z] > refreshing access token with scopes: []
+[debug] [2024-06-15T12:04:42.940Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-06-15T12:04:42.940Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-06-15T12:04:43.122Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-06-15T12:04:43.122Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-06-15T12:04:43.142Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-06-15T12:04:43.499Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-06-15T12:04:43.500Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project darkmoonhaunts (darkmoonhaunts) 
+[info] 
+=== Hosting Setup
+[debug] [2024-06-15T12:04:45.930Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/darkmoonhaunts [none]
+[debug] [2024-06-15T12:04:46.325Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/darkmoonhaunts 200
+[debug] [2024-06-15T12:04:46.326Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/darkmoonhaunts {"projectId":"darkmoonhaunts","projectNumber":"379964181437","displayName":"darkmoonhaunts","name":"projects/darkmoonhaunts","resources":{"hostingSite":"darkmoonhaunts"},"state":"ACTIVE","etag":"1_e8d2be50-f595-4c2d-b85b-8210c86dd8ea"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
